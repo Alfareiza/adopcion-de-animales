@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'refugio.mascota',
-    'refugio.adopcion',
+    'refugio.apps.mascota',
+    'refugio.apps.adopcion',
 ]
 
 MIDDLEWARE = [
