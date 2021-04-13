@@ -7,6 +7,9 @@ from refugio.apps.adopcion.models import Persona
 class Vacuna(models.Model):
     nombre = models.CharField(max_length=50)
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 
 class Mascota(models.Model):
     nombre = models.CharField(max_length=50)
@@ -17,3 +20,6 @@ class Mascota(models.Model):
     comentarios = models.CharField(max_length=10)
     persona = models.ForeignKey(Persona, null=True, blank=True, on_delete=models.CASCADE)
     vacuna = models.ManyToManyField(Vacuna, blank=True)
+
+    def __str__(self):
+        return f"{self.nombre}"
