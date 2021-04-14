@@ -5,5 +5,5 @@ from django.urls import path
 from refugio.apps.adopcion import views
 
 urlpatterns = [
-    path('index', views.index_adopcion)
+    path('', views.index_adopcion)
 ]
