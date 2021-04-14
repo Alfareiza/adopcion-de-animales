@@ -1,3 +1,4 @@
+
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
@@ -16,7 +17,7 @@ def mascota_view(request):
         form = MascotaForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('mascota:index_mascota'))  # Va a la app mascota y busca la url que tenga name=index
+            return HttpResponseRedirect(reverse('index'))  # Va a la app mascota y busca la url que tenga name=index
         else:
             return render(request, 'mascota/mascota_form.html', {'form': form}, status=400)
 
