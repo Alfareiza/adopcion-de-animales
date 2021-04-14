@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def index_adopcion(request):
-    return HttpResponse('Pagina Principal del Site')
+    return render(request, 'base/home.html')
