@@ -1,0 +1,28 @@
+{% extends 'base/home.html' %}
+{% block bienvenido %}{% endblock %}
+{% block content %}
+<form role="form" action="{% url 'mascota_crear' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!--<div class="form-group">
+        <label for="exampleInputEmail1">Dirección de Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFile">Seleccione Archivo...</label>
+        <input type="file" class="form-control-file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> Check me out
+        </label>
+    </div>-->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
