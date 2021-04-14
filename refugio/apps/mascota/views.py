@@ -2,10 +2,12 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.urls import reverse
+
 from refugio.apps.mascota.forms import MascotaForm
 
 
-def index(request):
+def index_mascota(request):
     return render(request, 'mascota/mascota.html')
 
 
