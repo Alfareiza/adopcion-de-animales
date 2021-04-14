@@ -5,5 +5,6 @@ from django.urls import path
 from refugio.apps.mascota import views
 
 urlpatterns = [
-    path('', views.index)
+    path('', views.index, name='index'),
+    path('nuevo/', views.mascota_view, name='mascota_crear')
 ]
