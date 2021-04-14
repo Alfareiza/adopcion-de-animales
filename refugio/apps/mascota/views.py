@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -16,8 +16,9 @@ def mascota_view(request):
         form = MascotaForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('mascota:index')  # Va a la app mascota y busca la url que tenga name=index
-    else:
-        form = MascotaForm()
+            return HttpResponseRedirect(reverse('mascota:index_mascota'))  # Va a la app mascota y busca la url que tenga name=index
+        else:
+            return render(request, 'mascota/mascota_form.html', {'form': form}, status=400)
 
+    form = MascotaForm()
     return render(request, 'mascota/mascota_form.html', {'form': form})
