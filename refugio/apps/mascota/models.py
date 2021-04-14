@@ -17,7 +17,7 @@ class Mascota(models.Model):
     edad_aproximada = models.IntegerField()
     fecha_de_rescate = models.DateField()
     raza = models.CharField(max_length=10)
-    comentarios = models.CharField(max_length=10)
+    comentarios = models.CharField(max_length=100)
     persona = models.ForeignKey(Persona, null=True, blank=True, on_delete=models.CASCADE)
     vacuna = models.ManyToManyField(Vacuna, blank=True)
 
