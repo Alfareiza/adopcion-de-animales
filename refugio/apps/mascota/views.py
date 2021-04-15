@@ -1,4 +1,3 @@
-
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
@@ -6,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from refugio.apps.mascota.forms import MascotaForm
+from refugio.apps.mascota.models import Mascota
 
 
 def index_mascota(request):
@@ -23,3 +23,8 @@ def mascota_view(request):
 
     form = MascotaForm()
     return render(request, 'mascota/mascota_form.html', {'form': form})
+
+
+def mascota_list(request):
+    mascota = Mascota.objects.all()
+    return render(request, 'mascota/mascota_list.html', context={'mascotas': mascota})
