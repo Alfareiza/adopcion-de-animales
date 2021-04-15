@@ -9,5 +9,6 @@ urlpatterns = [
     path('', views.index_mascota, name='index'),
     path('nuevo/', views.mascota_create, name='mascota_crear'),
     path('listar/', views.mascota_list, name='mascota_listar'),
-    path('editar/<int:id_mascota>/', views.mascota_edit, name='mascota_editar')
+    path('editar/<int:id_mascota>/', views.mascota_edit, name='mascota_editar'),
+    path('eliminar/<int:id_mascota>/', views.mascota_delete, name='mascota_eliminar')
 ]
