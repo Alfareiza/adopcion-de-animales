@@ -15,6 +15,7 @@
                     <td>Raza</td>
                     <td>Fecha de Rescate</td>
                     <td>Adoptante</td>
+                    <td>Acciones</td>
                 </tr>
             </thread>
             <tbody>
@@ -28,6 +29,9 @@
                 <td>{{ mascota.raza }}</td>
                 <td>{{ mascota.fecha_de_rescate }}</td>
                 <td>{{ mascota.persona.nombres }} {{mascota.persona.apellidos }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{% url 'mascota:mascota_editar' mascota.id %}">Editar</a>
+                </td>
             </tr>
             {% endfor %}
             {% else %}
