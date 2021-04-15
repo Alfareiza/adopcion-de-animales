@@ -1,0 +1,42 @@
+{% extends 'base/home.html' %}
+{% block bienvenido %}{% endblock %}
+{% block title%} Mascotas Adoptadas {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table table-sm table-hover">
+            <thread>
+                <tr>
+                    <td>#</td>
+                    <td>Nombre</td>
+                    <td>Sexo</td>
+                    <td>Edad</td>
+                    <td>Raza</td>
+                    <td>Fecha de Rescate</td>
+                    <td>Adoptante</td>
+                </tr>
+            </thread>
+            <tbody>
+            {% if mascotas %}
+            {% for mascota in mascotas %}
+            <tr>
+                <td>{{ mascota.id }}</td>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.sexo }}</td>
+                <td>{{ mascota.edad_aproximada }}</td>
+                <td>{{ mascota.raza }}</td>
+                <td>{{ mascota.fecha_de_rescate }}</td>
+                <td>{{ mascota.persona.nombres }} {{mascota.persona.apellidos }}</td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <h1>No hay registro de mascotas</h1>
+            {% endif%}
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div>
+{% endblock %}
