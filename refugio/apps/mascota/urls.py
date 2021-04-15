@@ -6,5 +6,6 @@ from refugio.apps.mascota import views
 
 urlpatterns = [
     path('', views.index_mascota, name='index'),
-    path('nuevo/', views.mascota_view, name='mascota_crear')
+    path('nuevo/', views.mascota_view, name='mascota_crear'),
+    path('listar/', views.mascota_list, name='mascota_listar')
 ]
