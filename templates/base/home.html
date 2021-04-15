@@ -11,85 +11,68 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title%} Document {% endblock %}</title>
+    <title>{% block title%} Adopcion de Animales {% endblock %}</title>
 </head>
 <body>
     <div class="container-fluid">
-    {% block header %}
-    {% include 'base/header.html' %}
-    {% endblock %}
 
-    {% block bienvenido %}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron">
-                <h2>
-                    Hello, world!
-                </h2>
-                <p>
-                    This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-                </p>
-                <p>
-                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
-                </p>
+        {% block header %}
+        {% include 'base/header.html' %}
+        {% endblock %}
+
+        {% block bienvenido %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h2>Bienvenido, quieres adoptar un hermoso animal ?</h2>
+                    <p>
+                        Este refugio es considerado el más cuidadoso y considerado punto de adopción de la ciudad. Esperemos te sientas cómodo en nuestra página web.
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="#">Más Información</a>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    {% endblock %}
+        {% endblock %}
 
-    {% block content %}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-3">
-                </div>
+        {% block content %}
+        <div class="row">
+                <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <form role="form">
-                        <div class="form-group">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <input type="file" class="form-control-file" id="exampleInputFile">
+                                <p class="help-block">Example block-level help text here.</p>
+                            </div>
+                            <div class="checkbox">
 
-                            <label for="exampleInputEmail1">
-                                Email address
-                            </label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
-                        </div>
-                        <div class="form-group">
+                                <label>
+                                    <input type="checkbox"> Check me out
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                <div class="col-md-3"></div>
+        </div>
+        {% endblock %}
 
-                            <label for="exampleInputPassword1">
-                                Password
-                            </label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="form-group">
 
-                            <label for="exampleInputFile">
-                                File input
-                            </label>
-                            <input type="file" class="form-control-file" id="exampleInputFile">
-                            <p class="help-block">
-                                Example block-level help text here.
-                            </p>
-                        </div>
-                        <div class="checkbox">
-
-                            <label>
-                                <input type="checkbox"> Check me out
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            Submit
-                        </button>
-                    </form>
-                </div>
-                <div class="col-md-3">
-                </div>
-            </div>
     </div>
-    {% endblock %}
-</div>
-    <div>
-</div>
     {% block footer %}
-    <h5>=== Aqui va el Footer === </h5>
+    <footer>=== Aqui va el Footer === </footer>
     {% endblock %}
 
     {% block extrajs %}
