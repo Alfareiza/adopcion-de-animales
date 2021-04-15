@@ -40,3 +40,11 @@ def mascota_edit(request, id_mascota):
             form.save()
         return HttpResponseRedirect(reverse('mascota:mascota_listar'))
     return render(request, 'mascota/mascota_form.html', context={'form': form})
+
+def mascota_delete(request, id_mascota):
+    mascota = Mascota.objects.get(id=id_mascota)
+    if request.method == 'POST':
+        mascota.delete()
+        return HttpResponseRedirect(reverse('mascota:mascota_listar'))
+    return render(request, 'mascota/mascota_delete.html', context={'mascota': mascota})
+
