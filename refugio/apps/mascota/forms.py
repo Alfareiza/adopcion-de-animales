@@ -24,6 +24,6 @@ class MascotaForm(forms.ModelForm):
                    'fecha_de_rescate': forms.TextInput(attrs={'class': 'form-control'}),
                    'raza': forms.TextInput(attrs={'class': 'form-control'}),
                    'comentarios': forms.TextInput(attrs={'class': 'form-control'}),
-                   'persona': forms.Select(attrs={'class': 'form-control'}),
+                   'persona': forms.Select(attrs={'class': 'custom-select'}),
                    'vacuna': forms.CheckboxSelectMultiple(),
                    }
