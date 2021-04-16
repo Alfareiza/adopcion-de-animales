@@ -2,7 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, CreateView
 
 from refugio.apps.mascota.forms import MascotaForm
 from refugio.apps.mascota.models import Mascota
@@ -17,7 +18,7 @@ def mascota_create(request):
         form = MascotaForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('mascota:index'))
+            return HttpResponseRedirect(reverse('mascota:mascota_listar'))
         else:
             return render(request, 'mascota/mascota_form.html', {'form': form}, status=400)
 
@@ -41,6 +42,7 @@ def mascota_edit(request, id_mascota):
         return HttpResponseRedirect(reverse('mascota:mascota_listar'))
     return render(request, 'mascota/mascota_form.html', context={'form': form})
 
+
 def mascota_delete(request, id_mascota):
     mascota = Mascota.objects.get(id=id_mascota)
     if request.method == 'POST':
@@ -48,3 +50,14 @@ def mascota_delete(request, id_mascota):
         return HttpResponseRedirect(reverse('mascota:mascota_listar'))
     return render(request, 'mascota/mascota_delete.html', context={'mascota': mascota})
 
+
+class MascotaList(ListView):
+    model = Mascota
+    template_name = 'mascota/mascota_list.html'
+
+
+class MascotaCreate(CreateView):
+    model = Mascota
+    form_class = MascotaForm
+    template_name = 'mascota/mascota_form.html'
+    success_url = reverse_lazy('mascota:mascota_listar')
