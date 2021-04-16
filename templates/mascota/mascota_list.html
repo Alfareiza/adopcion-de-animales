@@ -19,8 +19,8 @@
                 </tr>
             </thread>
             <tbody>
-            {% if mascotas %}
-            {% for mascota in mascotas %}
+            {% if object_list %}
+            {% for mascota in object_list %}
             <tr>
                 <td>{{ mascota.id }}</td>
                 <td>{{ mascota.nombre }}</td>
@@ -38,7 +38,7 @@
             </tr>
             {% endfor %}
             {% else %}
-            <h1>No hay registro de mascotas</h1>
+            <h1 class="alert alert-warning" role="alert">No hay registro de mascotas</h1>
             {% endif%}
             </tbody>
         </table>
