@@ -30,8 +30,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Adopciones</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">Solicitar</a>
-                                <a class="dropdown-item" href="#">Ver Solicitudes</a>
+								<a class="dropdown-item" href="{% url 'adopcion:solicitud_crear' %}">Solicitar</a>
+                                <a class="dropdown-item" href="{% url 'adopcion:solicitud_listar' %}">Ver Solicitudes</a>
                                 <!-- Comentando código innecesário
                                 <a class="dropdown-item" href="#">Something else here</a>
 								<div class="dropdown-divider"></div>
