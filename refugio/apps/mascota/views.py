@@ -50,8 +50,8 @@ def mascota_delete(request, id_mascota):
         return HttpResponseRedirect(reverse('mascota:mascota_listar'))
     return render(request, 'mascota/mascota_delete.html', context={'mascota': mascota})
 
-
-# https://docs.djangoproject.com/en/3.2/ref/class-based-views/
+# Intro https://docs.djangoproject.com/en/3.2/topics/class-based-views/
+# Detailed https://docs.djangoproject.com/en/3.2/ref/class-based-views/
 
 # Cuando la vista es llamada, se va hacia template_name.
 class MascotaList(ListView):
