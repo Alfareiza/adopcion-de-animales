@@ -2,43 +2,44 @@
 {% block bienvenido %}{% endblock %}
 {% block title%} Solicitudes de Adopción {% endblock %}
 {% block content %}
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <table class="table table-sm table-hover">
-            <thread>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table table-sm table-hover">
+                <thread>
+                    <tr>
+                        <td>N° de Solicitud</td>
+                        <td>Adoptante</td>
+                        <td>N° de Mascotas</td>
+                        {% comment %}<td>Razones</td>{% endcomment %}
+                        <td colspan="2">Acciones</td>
+                    </tr>
+                </thread>
+                <tbody>
+                {% if object_list %}
+                {% for solicitud in object_list %}
                 <tr>
-                    <td>N° de Solicitud</td>
-                    <td>Adoptante</td>
-                    <td>N° de Mascotas</td>
-                    <td>Razones</td>
-                    <td colspan="2">Acciones</td>
+                    <td>{{ solicitud.id }}</td>
+                    <td>{{ solicitud.persona.nombres }} {{ solicitud.persona.apellidos }}</td>
+                    <td>{{ solicitud.numero_mascotas }}</td>
+                    {% comment "No es necesario actualmente" %}<td>{{ solicitud.razones }}</td>{% endcomment %}
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{% url 'adopcion:solicitud_editar' solicitud.id %}">Editar</a>
+                    </td>
+                    <td>
+                       <a class="btn btn-danger btn-sm"
+                           href="{% url 'adopcion:solicitud_eliminar' solicitud.id %}">Eliminar</a>
+                    </td>{% comment "Optional note" %}{% endcomment %}
                 </tr>
-            </thread>
-            <tbody>
-            {% if object_list %}
-            {% for solicitud in object_list %}
-            <tr>
-                <td>{{ solicitud.id }}</td>
-                <td>{{ solicitud.persona.nombre }} {{ solicitud.persona.apellidos }}</td>
-                <td>{{ solicitud.numero_mascotas }}</td>
-                <td>{{ solicitud.razones }}</td>
-                <td>
-                    <!--<a class="btn btn-primary btn-sm" href="{% url 'adopcion:adopcion_editar' adopcion.id %}">Editar</a>-->
-                </td>
-                <td>
-                  <!--  <a class="btn btn-danger btn-sm"
-                       href="{% url 'adopcion:adopcion_eliminar' adopcion.id %}">Eliminar</a>-->
-                </td>
-            </tr>
-            {% endfor %}
-            {% else %}
-            <h4 class="alert alert-warning" role="alert">No hay adopciones registradas.</h4>
-            {% endif %}
-            </tbody>
-        </table>
+                {% endfor %}
+                {% else %}
+                <h4 class="alert alert-warning" role="alert">No hay adopciones registradas.</h4>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
     </div>
-    <div class="col-md-2"></div>
 </div>
-<div>
 {% endblock %}
