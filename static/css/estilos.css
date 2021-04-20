@@ -1,0 +1,17 @@
+.main-footer{
+    background-color: #142855;
+}
+
+.rights{
+    background-color: #171a4c;
+}
+
+body.footer-fijo{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+body.footer-fijo main{
+	flex: 1;
+}
