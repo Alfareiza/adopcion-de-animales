@@ -1,0 +1,15 @@
+{% extends 'base/home.html' %}
+{% block bienvenido %}{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form role="form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+{% endblock %}
