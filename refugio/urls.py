@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('refugio.apps.adopcion.urls')),
     path('mascota/', include('refugio.apps.mascota.urls')),
+    path('usuario/', include('refugio.apps.usuario.urls')),
 ]

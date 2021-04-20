@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'refugio.apps.mascota',
     'refugio.apps.adopcion',
+    'refugio.apps.usuario',
 ]
 
 MIDDLEWARE = [
