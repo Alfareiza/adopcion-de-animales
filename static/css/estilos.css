@@ -1,5 +1,6 @@
 .main-footer{
     background-color: #142855;
+
 }
 
 .rights{
@@ -15,3 +16,9 @@ body.footer-fijo{
 body.footer-fijo main{
 	flex: 1;
 }
+
+.fixed-footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    }
