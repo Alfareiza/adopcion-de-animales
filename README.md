@@ -10,7 +10,7 @@
 <h1>⚈ Acerca de 'Adopción de Animales'</h1>
 Es una aplicación web desarrollada en el framkework de python llamado Django. 
 
-Este repositorio ha sido realizado gracias al mini curso que [Codigo Facilito](http://codigofacilito.com/) dispuso por medio de su canal de youtube en Junio del 2016.pull 
+Este repositorio ha sido realizado gracias al mini curso que [Codigo Facilito](http://codigofacilito.com/) dispuso por medio de su canal de youtube en Junio del 2016. [Videos de Youtube](https://www.youtube.com/playlist?list=PLsRdPvQ2xMkH8c2BOnQ_O1KZ9lyyL_eGB).
 
 <h1>⚈ Más Información</h1>
 Para este proyecto he usado Django 3.2 y Python 3.8. 
