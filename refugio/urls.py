@@ -15,22 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import login
-<<<<<<< HEAD
 from django.contrib.auth.views import LoginView, PasswordResetConfirmView, PasswordResetDoneView, \
     PasswordResetCompleteView, PasswordResetView
 from django.urls import path, include, re_path
-=======
 from django.contrib.auth.views import LoginView
 from django.urls import path, include
 
->>>>>>> ad216da258cc08f406a12860621e5ab72357dbaf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('adopcion/', include('refugio.apps.adopcion.urls')),
     path('mascota/', include('refugio.apps.mascota.urls')),
     path('usuario/', include('refugio.apps.usuario.urls')),
-<<<<<<< HEAD
     path('', LoginView.as_view(template_name='index.html'), name='login'),
     path('reset/password_reset', PasswordResetView.as_view(template_name='registration/password_reset_form.html'),
          name='password_reset'),
@@ -43,8 +39,5 @@ urlpatterns = [
     path('reset/password_reset_complete',
          PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
          name='password_reset_complete'),
-
-=======
     path('', LoginView.as_view(template_name='index.html'), name='login')
->>>>>>> ad216da258cc08f406a12860621e5ab72357dbaf
 ]
