@@ -1,0 +1,37 @@
+{% extends 'base/home.html' %}
+{% block title%} Mascotas {% endblock %}
+{% block header %}
+{% include 'base/header-before-login.html' %}
+{% endblock %}
+{% block bienvenido %}{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form role="form" method="post" class="form-group">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="form-group">
+                        <label for="username">Nombre de Usuario:</label>
+                        <input type="text" class="form-control" name="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="username">Password:</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <a href="{%url 'password_reset' %}">Olvidé mi contraseña</a>
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}
