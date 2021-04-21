@@ -13,12 +13,6 @@ body.footer-fijo{
 	min-height: 100vh;
 }
 
-body.footer-fijo main{
+body.footer-fijo .contenido-body{
 	flex: 1;
 }
-
-.fixed-footer{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    }
