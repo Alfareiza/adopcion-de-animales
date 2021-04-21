@@ -24,7 +24,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('adopcion/', include('refugio.apps.adopcion.urls')),
+    path('', include('refugio.apps.adopcion.urls'), name='home'),
     path('mascota/', include('refugio.apps.mascota.urls')),
     path('usuario/', include('refugio.apps.usuario.urls')),
     path('accounts/login/', LoginView.as_view(template_name='index.html'), name='login'),
