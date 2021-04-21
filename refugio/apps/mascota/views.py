@@ -1,3 +1,4 @@
+from django.core import serializers
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 
@@ -50,6 +51,7 @@ def mascota_delete(request, id_mascota):
         return HttpResponseRedirect(reverse('mascota:mascota_listar'))
     return render(request, 'mascota/mascota_delete.html', context={'mascota': mascota})
 
+
 # Intro https://docs.djangoproject.com/en/3.2/topics/class-based-views/
 # Detailed https://docs.djangoproject.com/en/3.2/ref/class-based-views/
 
@@ -77,3 +79,8 @@ class MascotaDelete(DeleteView):
     model = Mascota
     template_name = 'mascota/mascota_delete.html'
     success_url = reverse_lazy('mascota:mascota_listar')
+
+
+def listadodemascotas(request):
+    lista = serializers.serialize('json', Mascota.objects.all())
+    return HttpResponse(lista, content_type='application/json')
