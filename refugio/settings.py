@@ -135,6 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # A donde seré redireccionado luego de hacer login
 LOGIN_REDIRECT_URL = reverse_lazy('adopcion:solicitud_listar')
+# A donde seré redireccionado luego de hacer logout
+LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = config('EMAIL_HOST')
